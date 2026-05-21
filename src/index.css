@@ -1,0 +1,35 @@
+/* Шрифт: при изменении FONT в SPEC.md — обнови URL ниже */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === ТЕМА ===
+   При заполнении SPEC.md — меняй только эти три строки.
+   Весь сайт перекрашивается автоматически.
+*/
+:root {
+  --color-primary: #2563EB;
+  --color-accent:  #F59E0B;
+  --font-family:   'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* === БАЗОВЫЕ АНИМАЦИИ ===
+   Добавь data-animate к корневому элементу секции.
+   Хук useScrollAnimation добавит класс animate-in при появлении в зоне видимости.
+*/
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-animate].animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
