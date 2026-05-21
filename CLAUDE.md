@@ -70,4 +70,6 @@ export default function MySection() {
 }
 ```
 
-**Запрещено:** Framer Motion, parallax, scroll-triggered JS-библиотеки, Lottie, кастомные курсоры.
+**Параллакс (разрешён для изображений):** scroll-listener на `window` с `requestAnimationFrame`, применяется только к фоновым изображениям секций через `transform: translateY()`. Реализовать через хук `useParallax.ts` в `src/lib/`.
+
+**Запрещено:** Framer Motion, Lottie, кастомные курсоры, сторонние parallax-библиотеки.
