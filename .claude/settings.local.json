@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Work\\\\epirs\\\\customers-docs\" -Recurse -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(cp \"customer-docs/layouts/Лого_компании/epirs_logo_no_background.png\" \"public/images/logo.png\")",
+      "Bash(cp \"customer-docs/layouts/стартовый_автобус/bus_frame_no_background.png\" \"public/images/hero-bus.png\")",
+      "Bash(cp \"customer-docs/layouts/Сферы_деятельности/truck_no_background_no_logo.png\" \"public/images/spheres/transport.png\")",
+      "Bash(cp \"customer-docs/layouts/Сферы_деятельности/boat_no_background.png\" \"public/images/spheres/marine.png\")",
+      "Bash(cp \"customer-docs/layouts/Сферы_деятельности/wind_turbines_no_background.png\" \"public/images/spheres/energy.png\")",
+      "Bash(python *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Work\\\\epirs\" -Recurse -Force)",
+      "Bash(Sort-Object)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Work\\\\epirs\" -Directory)",
+      "Bash(Select-Object -ExpandProperty Name)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Work\\\\epirs\\\\customer-docs\\\\layouts\" -Recurse | Where-Object { $_.Extension -in '.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg' } | Select-Object -ExpandProperty FullName)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Work\\\\epirs\\\\customer-docs\\\\layouts\\\\фото_примеров_наших_изделий\" -File | Select-Object Name, @{Name=\"Size\\(KB\\)\";Expression={[math]::Round\\($_.Length/1KB, 2\\)}} | Format-Table -AutoSize)",
+      "Bash(Get-ChildItem -Path C:\\\\Work\\\\epirs -File)",
+      "Bash(Select-Object Name, FullName)",
+      "Bash(unzip -l TZ.docx)",
+      "Bash(unzip -p TZ.docx word/document.xml)",
+      "Bash(grep -v '^$')"
+    ]
+  }
+}

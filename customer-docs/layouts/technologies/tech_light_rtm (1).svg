@@ -1,0 +1,75 @@
+<svg width="490" height="610" viewBox="0 0 490 610" xmlns="http://www.w3.org/2000/svg">
+  <rect width="490" height="610" fill="#f5f4f2" rx="4"/>
+  <defs>
+    <pattern id="hatch" x="0" y="0" width="10" height="10"
+             patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#c0bdb8" stroke-width="1.4"/>
+    </pattern>
+    <pattern id="fiber_pat" x="0" y="0" width="14" height="5"
+             patternUnits="userSpaceOnUse">
+      <line x1="0" y1="2.5" x2="14" y2="2.5" stroke="#a08060" stroke-width="0.7"
+            stroke-dasharray="5,3"/>
+    </pattern>
+    <marker id="arr_dn" markerWidth="8" markerHeight="8" refX="4" refY="7" orient="auto">
+      <polygon points="0,0 8,0 4,8" fill="#b8860b"/>
+    </marker>
+    <marker id="arr_rt" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0,0 0,8 8,4" fill="#3d8f68"/>
+    </marker>
+    <marker id="arr_lt" markerWidth="8" markerHeight="8" refX="1" refY="4" orient="auto">
+      <polygon points="8,0 8,8 0,4" fill="#b8860b"/>
+    </marker>
+    <marker id="arr_up" markerWidth="8" markerHeight="8" refX="4" refY="1" orient="auto">
+      <polygon points="0,8 8,8 4,0" fill="#b8860b"/>
+    </marker>
+  </defs>
+
+  <text x="245" y="42" font-family="Montserrat,Arial,sans-serif" font-size="16" font-weight="700" fill="#1a1714" text-anchor="middle" letter-spacing="2">LIGHT RTM</text>
+  <line x1="40" y1="52" x2="450" y2="52" stroke="#c8c4be" stroke-width="0.8"/>
+  <text x="245" y="69" font-family="'Courier New',monospace" font-size="9.5" fill="#706a62" text-anchor="middle" letter-spacing="0.5">две жёсткие полуформы · закачка смолы под давлением · вакуум</text>
+  <rect x="80" y="170" width="290" height="50" rx="0" fill="#d8d6d2" stroke="#9a9590" stroke-width="1.2"/>
+  <rect x="80" y="170" width="290" height="50" rx="0" fill="url(#hatch)" opacity="0.5"/>
+  <rect x="110" y="217" width="230" height="5" fill="#9a9590" opacity="0.6"/>
+  <rect x="80" y="336" width="290" height="50" rx="0" fill="#d8d6d2" stroke="#9a9590" stroke-width="1.2"/>
+  <rect x="80" y="336" width="290" height="50" rx="0" fill="url(#hatch)" opacity="0.5"/>
+  <rect x="110" y="334" width="230" height="5" fill="#9a9590" opacity="0.6"/>
+  <line x1="92" y1="166" x2="92" y2="390" stroke="#b8860b" stroke-width="2.4" stroke-linecap="round"/>
+  <rect x="84" y="155" width="16" height="12" rx="2" fill="#b8860b" opacity="0.8"/>
+  <rect x="84" y="389" width="16" height="12" rx="2" fill="#b8860b" opacity="0.8"/>
+  <line x1="358" y1="166" x2="358" y2="390" stroke="#b8860b" stroke-width="2.4" stroke-linecap="round"/>
+  <rect x="350" y="155" width="16" height="12" rx="2" fill="#b8860b" opacity="0.8"/>
+  <rect x="350" y="389" width="16" height="12" rx="2" fill="#b8860b" opacity="0.8"/>
+  <line x1="110" y1="278" x2="340" y2="278" stroke="#9a9590" stroke-width="0.9" stroke-dasharray="6,4"/>
+  <rect x="110" y="230.0" width="230" height="17.2" fill="#8b7355" stroke="#a08060" stroke-width="0.4" opacity="0.88"/>
+  <rect x="110" y="230.0" width="230" height="17.2" fill="url(#fiber_pat)" opacity="0.35"/>
+  <rect x="110" y="249.2" width="230" height="17.2" fill="#a08060" stroke="#a08060" stroke-width="0.4" opacity="0.88"/>
+  <rect x="110" y="249.2" width="230" height="17.2" fill="url(#fiber_pat)" opacity="0.35"/>
+  <rect x="110" y="268.4" width="230" height="17.2" fill="#8b7355" stroke="#a08060" stroke-width="0.4" opacity="0.88"/>
+  <rect x="110" y="268.4" width="230" height="17.2" fill="url(#fiber_pat)" opacity="0.35"/>
+  <rect x="110" y="287.6" width="230" height="17.2" fill="#a08060" stroke="#a08060" stroke-width="0.4" opacity="0.88"/>
+  <rect x="110" y="287.6" width="230" height="17.2" fill="url(#fiber_pat)" opacity="0.35"/>
+  <rect x="110" y="306.8" width="230" height="17.2" fill="#8b7355" stroke="#a08060" stroke-width="0.4" opacity="0.88"/>
+  <rect x="110" y="306.8" width="230" height="17.2" fill="url(#fiber_pat)" opacity="0.35"/>
+  <text x="26" y="258" font-family="Montserrat,Arial,sans-serif" font-size="8.5" fill="#3d8f68" text-anchor="middle">смола</text>
+  <text x="26" y="269" font-family="Montserrat,Arial,sans-serif" font-size="8" fill="#3d8f68" text-anchor="middle" font-weight="700">P+</text>
+  <line x1="26" y1="278" x2="107" y2="278" stroke="#3d8f68" stroke-width="2" marker-end="url(#arr_rt)"/>
+  <text x="464" y="258" font-family="Montserrat,Arial,sans-serif" font-size="8.5" fill="#b8860b" text-anchor="middle">вакуум</text>
+  <text x="464" y="269" font-family="Montserrat,Arial,sans-serif" font-size="8" fill="#b8860b" text-anchor="middle" font-weight="700">V−</text>
+  <line x1="343" y1="278" x2="464" y2="278" stroke="#b8860b" stroke-width="2" marker-end="url(#arr_lt)"/>
+  <line x1="138" y1="278" x2="168" y2="278" stroke="#3d8f68" stroke-width="1.1" marker-end="url(#arr_rt)" opacity="0.5"/>
+  <line x1="198" y1="278" x2="228" y2="278" stroke="#3d8f68" stroke-width="1.1" marker-end="url(#arr_rt)" opacity="0.5"/>
+  <line x1="258" y1="278" x2="288" y2="278" stroke="#3d8f68" stroke-width="1.1" marker-end="url(#arr_rt)" opacity="0.5"/>
+  <line x1="225" y1="195" x2="385" y2="187" stroke="#706a62" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <circle cx="225" cy="195" r="2.2" fill="#706a62"/>
+  <text x="390" y="191" font-family="'Courier New',monospace" font-size="9" fill="#706a62" text-anchor="start">верхняя полуформа</text>
+  <line x1="225" y1="268.4" x2="385" y2="268.4" stroke="#706a62" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <circle cx="225" cy="268.4" r="2.2" fill="#706a62"/>
+  <text x="390" y="272.4" font-family="'Courier New',monospace" font-size="9" fill="#706a62" text-anchor="start">армирование</text>
+  <line x1="225" y1="361" x2="385" y2="369" stroke="#706a62" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <circle cx="225" cy="361" r="2.2" fill="#706a62"/>
+  <text x="390" y="373" font-family="'Courier New',monospace" font-size="9" fill="#706a62" text-anchor="start">нижняя полуформа</text>
+  <line x1="40" y1="552" x2="450" y2="552" stroke="#c8c4be" stroke-width="0.6"/>
+  <text x="245" y="570" font-family="Montserrat,Arial,sans-serif" font-size="10.5" fill="#706a62" text-anchor="middle">Смола нагнетается под давлением в закрытую полость —</text>
+  <text x="245" y="587" font-family="Montserrat,Arial,sans-serif" font-size="10.5" fill="#706a62" text-anchor="middle">точная геометрия, обе поверхности гладкие.</text>
+
+</svg>
