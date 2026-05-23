@@ -19,7 +19,12 @@
       "Bash(Select-Object Name, FullName)",
       "Bash(unzip -l TZ.docx)",
       "Bash(unzip -p TZ.docx word/document.xml)",
-      "Bash(grep -v '^$')"
+      "Bash(grep -v '^$')",
+      "Bash(Remove-Item \"c:\\\\Work\\\\epirs\\\\src\\\\components\\\\sections\\\\AboutSection.tsx\" -Force)",
+      "Bash(Remove-Item \"c:\\\\Work\\\\epirs\\\\src\\\\components\\\\sections\\\\ServicesSection.tsx\" -Force)",
+      "Bash(Write-Output \"Deleted\")",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)"
     ]
   }
 }
