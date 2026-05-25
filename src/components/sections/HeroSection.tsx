@@ -17,11 +17,11 @@ export default function HeroSection({ id }: HeroSectionProps) {
       <div className="w-full px-14 pt-14 pb-0 flex flex-col flex-1">
         {/* Верхняя строка: H1 слева, subtitle+description+CTA справа */}
         <div className="grid grid-cols-[1fr_2fr] gap-16 mb-12 items-start">
-          <h1 className="font-['Montserrat'] font-bold text-[20px] text-black leading-snug">
+          <h1 className="font-['Montserrat'] font-semibold text-[20px] text-black leading-snug">
             {content.hero.title}
           </h1>
           <div>
-            <p className="font-['Inter'] font-bold text-[15px] text-black mb-3">
+            <p className="font-['Inter'] font-medium text-[15px] text-black mb-3">
               {content.hero.subtitle}
             </p>
             <p className="font-['Inter'] font-normal text-[14px] text-black mb-8 leading-relaxed">
