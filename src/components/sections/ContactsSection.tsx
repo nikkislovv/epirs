@@ -38,8 +38,8 @@ export default function ContactsSection({ id }: ContactsSectionProps) {
   }
 
   return (
-    <section id={id} className="bg-primary px-6 py-16">
-      <div className="max-w-7xl mx-auto">
+    <section id={id} className="bg-primary px-14 py-16">
+      <div className="w-full">
         <SectionHeading>Контакты</SectionHeading>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">

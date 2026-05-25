@@ -30,13 +30,13 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary/90 backdrop-blur-sm">
-      <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav className="w-full px-14 h-20 flex items-center gap-12">
         <img
           src={content.logo}
           alt="ЭПИРС"
-          className="h-10 object-contain"
+          className="h-14 object-contain flex-shrink-0"
         />
-        <div className="hidden md:flex items-center gap-8 text-sm">
+        <div className="hidden md:flex items-center gap-8 text-base">
           {content.nav.map((item) => (
             <button
               key={item.id}
@@ -56,7 +56,7 @@ export default function Navbar() {
         </div>
         <button
           onClick={() => scrollTo('contacts')}
-          className="md:hidden text-sm font-medium text-black hover:opacity-70 transition-opacity"
+          className="ml-auto md:hidden text-sm font-medium text-black hover:opacity-70 transition-opacity"
         >
           {content.hero.cta}
         </button>

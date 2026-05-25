@@ -4,8 +4,8 @@ const year = new Date().getFullYear()
 
 export default function Footer() {
   return (
-    <footer className="bg-primary border-t border-black/10 py-8 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-secondary">
+    <footer className="bg-primary border-t border-black/10 py-8 px-14">
+      <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-secondary">
         <span>© {year} ООО «ЭПИРС»</span>
         <div className="flex flex-wrap justify-center gap-6">
           <a href={`tel:${content.contacts.phone}`} className="hover:text-black transition-colors">

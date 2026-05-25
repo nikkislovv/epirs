@@ -57,8 +57,8 @@ interface SpheresSectionProps {
 
 export default function SpheresSection({ id }: SpheresSectionProps) {
   return (
-    <section id={id} className="bg-primary px-6">
-      <div className="max-w-7xl mx-auto divide-y divide-black/10">
+    <section id={id} className="bg-primary px-14">
+      <div className="w-full divide-y divide-black/10">
         {content.spheres.map((sphere) => (
           <SphereSubsection key={sphere.id} sphere={sphere} />
         ))}

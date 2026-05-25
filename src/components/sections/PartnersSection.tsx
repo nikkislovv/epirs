@@ -65,8 +65,8 @@ interface PartnersSectionProps {
 
 export default function PartnersSection({ id }: PartnersSectionProps) {
   return (
-    <section id={id} className="bg-primary px-6 py-16">
-      <div className="max-w-7xl mx-auto">
+    <section id={id} className="bg-primary px-14 py-16">
+      <div className="w-full">
         <SectionHeading>Партнёры</SectionHeading>
         <LogoMarquee />
         <ProductGallery />
