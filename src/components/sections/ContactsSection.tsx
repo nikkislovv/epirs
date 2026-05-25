@@ -99,14 +99,6 @@ export default function ContactsSection({ id }: ContactsSectionProps) {
             >
               Telegram: {content.contacts.telegram}
             </a>
-            <a
-              href={content.contacts.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-heading transition-colors"
-            >
-              Instagram: {content.contacts.instagram}
-            </a>
           </div>
         </div>
       </div>

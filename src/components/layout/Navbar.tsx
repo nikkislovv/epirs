@@ -5,23 +5,23 @@ export default function Navbar() {
   const [activeId, setActiveId] = useState<string>('')
 
   useEffect(() => {
-    const sectionIds = content.nav.map((item) => item.id)
-    const observers: IntersectionObserver[] = []
+    const ids = content.nav.map((item) => item.id)
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id)
-      if (!el) return
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveId(id)
-        },
-        { threshold: 0.5 }
-      )
-      observer.observe(el)
-      observers.push(observer)
-    })
+    const onScroll = () => {
+      const threshold = window.innerHeight * 0.4
+      let current = ids[0]
+      for (const id of ids) {
+        const el = document.getElementById(id)
+        if (el && el.getBoundingClientRect().top <= threshold) {
+          current = id
+        }
+      }
+      setActiveId(current)
+    }
 
-    return () => observers.forEach((o) => o.disconnect())
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   function scrollTo(id: string) {

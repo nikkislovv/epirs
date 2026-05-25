@@ -22,14 +22,6 @@ export default function Footer() {
           >
             {content.contacts.telegram}
           </a>
-          <a
-            href={content.contacts.instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black transition-colors"
-          >
-            {content.contacts.instagram}
-          </a>
         </div>
       </div>
     </footer>

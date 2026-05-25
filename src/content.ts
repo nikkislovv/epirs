@@ -43,8 +43,6 @@ export interface SiteContent {
     email: string
     telegram: string
     telegramUrl: string
-    instagram: string
-    instagramUrl: string
   }
   web3formsKey: string
 }
@@ -83,7 +81,7 @@ export const content: SiteContent = {
       bgOpacity:  'opacity-50',
       imageRight: true,
       pngHeight:  '140vh',
-      pngBottom:  '-30vh',
+      pngBottom:  '-40vh',
     },
     {
       id:         'transport',
@@ -164,12 +162,10 @@ export const content: SiteContent = {
     videoIds: ['xb83uYlYsWA', 'QLXhxr4lbQQ', 'L3gAmJerK3c', '6km4EqtEPpY'],
   },
   contacts: {
-    phone:        '+375293244382',
-    email:        'hleb.smychok.sbmt@gmail.com',
-    telegram:     '@hlebsmychok',
-    telegramUrl:  'https://t.me/hlebsmychok',
-    instagram:    'hsmychok',
-    instagramUrl: 'https://instagram.com/hsmychok',
+    phone:       '+375296736404',
+    email:       'compozit777@yandex.ru',
+    telegram:    '@hlebsmychok',
+    telegramUrl: 'https://t.me/hlebsmychok',
   },
   web3formsKey: '',
 }
