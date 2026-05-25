@@ -1,5 +1,6 @@
 import { content } from '../../content'
 import { useParallax } from '../../lib/useParallax'
+import { useScrollAnimation } from '../../lib/useScrollAnimation'
 import SectionHeading from '../ui/SectionHeading'
 
 interface SphereSubsectionProps {
@@ -7,47 +8,56 @@ interface SphereSubsectionProps {
 }
 
 function SphereSubsection({ sphere }: SphereSubsectionProps) {
-  const parallaxRef = useParallax<HTMLImageElement>(0.2)
+  const bgParallaxRef = useParallax<HTMLImageElement>(0.12)
+  const pngParallaxRef = useParallax<HTMLImageElement>(0.2)
+  const animRef = useScrollAnimation<HTMLElement>()
 
-  const imageCol = (
-    <div className="relative flex justify-center items-center min-h-[340px]">
+  const photoSide = (
+    <div className="relative w-1/2 overflow-hidden">
       <img
+        ref={bgParallaxRef}
         src={sphere.bgImage}
         alt=""
-        className={`absolute inset-0 w-full h-full object-cover rounded-[28px] ${sphere.bgOpacity}`}
+        className={`absolute inset-0 w-full h-full object-cover ${sphere.bgOpacity}`}
       />
-      <img
-        ref={parallaxRef}
-        src={sphere.mainImage}
-        alt={sphere.title}
-        className="relative z-10 max-h-[320px] w-auto object-contain drop-shadow-lg"
-      />
+      <div className="relative z-10 flex flex-col justify-center h-full px-14 py-20">
+        <SectionHeading>{sphere.title}</SectionHeading>
+        <p className="font-['Inter'] font-normal text-[13px] text-black leading-relaxed whitespace-pre-line">
+          {sphere.text}
+        </p>
+      </div>
     </div>
   )
 
-  const textCol = (
-    <div>
-      <SectionHeading>{sphere.title}</SectionHeading>
-      <p className="font-['Inter'] font-normal text-[12px] text-black leading-relaxed whitespace-pre-line">
-        {sphere.text}
-      </p>
+  const pngSide = (
+    <div className="w-1/2 bg-primary flex items-center justify-center overflow-hidden">
+      <img
+        ref={pngParallaxRef}
+        src={sphere.mainImage}
+        alt={sphere.title}
+        className="max-h-[85vh] w-auto object-contain"
+      />
     </div>
   )
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-16">
+    <section
+      ref={animRef}
+      data-animate
+      className="min-h-screen flex"
+    >
       {sphere.imageRight ? (
         <>
-          {textCol}
-          {imageCol}
+          {photoSide}
+          {pngSide}
         </>
       ) : (
         <>
-          {imageCol}
-          {textCol}
+          {pngSide}
+          {photoSide}
         </>
       )}
-    </div>
+    </section>
   )
 }
 
@@ -57,12 +67,10 @@ interface SpheresSectionProps {
 
 export default function SpheresSection({ id }: SpheresSectionProps) {
   return (
-    <section id={id} className="bg-primary px-14">
-      <div className="w-full divide-y divide-black/10">
-        {content.spheres.map((sphere) => (
-          <SphereSubsection key={sphere.id} sphere={sphere} />
-        ))}
-      </div>
+    <section id={id}>
+      {content.spheres.map((sphere) => (
+        <SphereSubsection key={sphere.id} sphere={sphere} />
+      ))}
     </section>
   )
 }
