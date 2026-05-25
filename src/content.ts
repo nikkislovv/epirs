@@ -69,8 +69,8 @@ export const content: SiteContent = {
     description: 'Мы специализируемся на выпуске высококачественных изделий из полиэфирных и эпоксидных смол, используя передовые материалы от мировых лидеров, таких как BUFA, AOC, и BASF. Наш многолетний опыт и использование лучших компонентов гарантируют высочайшее качество продукции для различных отраслей — от транспорта до туризма.',
     busImage:    '/customer-docs/layouts/start_bus/bus_frame_no_background.png',
     cta:         'Написать',
-    busHeight:   '80vh',
-    busBottom:   '-10vh',
+    busHeight:   '75vh',
+    busBottom:   '-15vh',
     busParallax: 0.15,
   },
   spheres: [
