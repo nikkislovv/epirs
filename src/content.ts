@@ -11,6 +11,9 @@ export interface SiteContent {
     description: string
     busImage: string
     cta: string
+    busHeight: string
+    busBottom: string
+    busParallax: number
   }
   spheres: Array<{
     id: string
@@ -20,6 +23,8 @@ export interface SiteContent {
     bgImage: string
     bgOpacity: string
     imageRight: boolean
+    pngHeight: string
+    pngBottom: string
   }>
   technologies: Array<{
     title: string
@@ -64,6 +69,9 @@ export const content: SiteContent = {
     description: 'Мы специализируемся на выпуске высококачественных изделий из полиэфирных и эпоксидных смол, используя передовые материалы от мировых лидеров, таких как BUFA, AOC, и BASF. Наш многолетний опыт и использование лучших компонентов гарантируют высочайшее качество продукции для различных отраслей — от транспорта до туризма.',
     busImage:    '/customer-docs/layouts/start_bus/bus_frame_no_background.png',
     cta:         'Написать',
+    busHeight:   '80vh',
+    busBottom:   '-10vh',
+    busParallax: 0.15,
   },
   spheres: [
     {
@@ -74,6 +82,8 @@ export const content: SiteContent = {
       bgImage:    '/customer-docs/layouts/Areas_Of_Activity/_.jpeg',
       bgOpacity:  'opacity-50',
       imageRight: true,
+      pngHeight:  '140vh',
+      pngBottom:  '-30vh',
     },
     {
       id:         'transport',
@@ -83,6 +93,8 @@ export const content: SiteContent = {
       bgImage:    '/customer-docs/layouts/Areas_Of_Activity/image (4).png',
       bgOpacity:  'opacity-[0.32]',
       imageRight: false,
+      pngHeight:  '160vh',
+      pngBottom:  '-35vh',
     },
     {
       id:         'energy',
@@ -92,6 +104,8 @@ export const content: SiteContent = {
       bgImage:    '/customer-docs/layouts/Areas_Of_Activity/image (5).png',
       bgOpacity:  'opacity-[0.32]',
       imageRight: true,
+      pngHeight:  '120vh',
+      pngBottom:  '-10vh',
     },
     {
       id:         'medicine',
@@ -101,6 +115,8 @@ export const content: SiteContent = {
       bgImage:    '/customer-docs/layouts/Areas_Of_Activity/image (6).png',
       bgOpacity:  'opacity-[0.27]',
       imageRight: false,
+      pngHeight:  '140vh',
+      pngBottom:  '-35vh',
     },
   ],
   technologies: [

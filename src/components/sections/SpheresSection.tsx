@@ -9,7 +9,7 @@ interface SphereSubsectionProps {
 
 function SphereSubsection({ sphere }: SphereSubsectionProps) {
   const bgParallaxRef = useParallax<HTMLImageElement>(0.12)
-  const pngParallaxRef = useParallax<HTMLImageElement>(0.2)
+  const pngParallaxRef = useParallax<HTMLDivElement>(0.4)
   const animRef = useScrollAnimation<HTMLElement>()
 
   const photoSide = (
@@ -30,13 +30,18 @@ function SphereSubsection({ sphere }: SphereSubsectionProps) {
   )
 
   const pngSide = (
-    <div className="w-1/2 bg-primary flex items-center justify-center overflow-hidden">
-      <img
+    <div className="relative w-1/2 bg-primary overflow-hidden">
+      <div
         ref={pngParallaxRef}
-        src={sphere.mainImage}
-        alt={sphere.title}
-        className="max-h-[85vh] w-auto object-contain"
-      />
+        className="absolute inset-x-0 flex justify-center items-end"
+        style={{ bottom: sphere.pngBottom, height: sphere.pngHeight }}
+      >
+        <img
+          src={sphere.mainImage}
+          alt={sphere.title}
+          className="h-full w-auto object-contain"
+        />
+      </div>
     </div>
   )
 
