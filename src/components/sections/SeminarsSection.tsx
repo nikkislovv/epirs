@@ -9,7 +9,7 @@ interface SeminarsSectionProps {
 
 export default function SeminarsSection({ id }: SeminarsSectionProps) {
   return (
-    <section id={id} className="bg-primary px-14 py-16">
+    <section id={id} className="bg-primary px-4 md:px-14 py-16">
       <div className="w-full">
         <SectionHeading>{content.seminars.title}</SectionHeading>
         <DarkBlock>

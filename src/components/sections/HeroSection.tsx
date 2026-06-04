@@ -13,11 +13,11 @@ export default function HeroSection({ id }: HeroSectionProps) {
   }
 
   return (
-    <section id={id} className="min-h-screen bg-primary pt-20 flex flex-col overflow-hidden">
-      <div className="w-full px-14 pt-14 pb-0 flex flex-col flex-1">
-        {/* Верхняя строка: H1 слева, subtitle+description+CTA справа */}
-        <div className="grid grid-cols-[1fr_2fr] gap-16 mb-12 items-start">
-          <h1 className="font-['Montserrat'] font-semibold text-[20px] text-black leading-snug">
+    <section id={id} className="min-h-screen bg-primary pt-16 md:pt-20 flex flex-col overflow-hidden">
+      <div className="w-full px-4 md:px-14 pt-8 md:pt-14 pb-0 flex flex-col flex-1">
+        {/* Текст: стопка на мобильном, сетка на десктопе */}
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_2fr] md:gap-16 mb-8 md:mb-12 md:items-start">
+          <h1 className="font-['Montserrat'] font-semibold text-[18px] md:text-[20px] text-black leading-snug">
             {content.hero.title}
           </h1>
           <div>
@@ -37,7 +37,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
         </div>
 
         {/* Автобус — под текстом, по центру, крупный */}
-        <div className="relative flex-1 overflow-hidden">
+        <div className="relative min-h-[45vh] md:min-h-0 flex-1 overflow-hidden">
           <div
             ref={busParallaxRef}
             className="absolute inset-x-0 flex justify-center items-end"

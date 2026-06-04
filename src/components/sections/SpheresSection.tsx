@@ -13,14 +13,14 @@ function SphereSubsection({ sphere }: SphereSubsectionProps) {
   const animRef = useScrollAnimation<HTMLElement>()
 
   const photoSide = (
-    <div className="relative w-1/2 overflow-hidden">
+    <div className="relative w-full md:w-1/2 overflow-hidden flex-1 md:flex-none">
       <img
         ref={bgParallaxRef}
         src={sphere.bgImage}
         alt=""
         className={`absolute inset-0 w-full h-full object-cover ${sphere.bgOpacity}`}
       />
-      <div className="relative z-10 flex flex-col justify-center h-full px-14 py-20">
+      <div className="relative z-10 flex flex-col justify-center h-full px-4 py-12 md:px-14 md:py-20">
         <SectionHeading>{sphere.title}</SectionHeading>
         <p className="font-['Inter'] font-normal text-[13px] text-black leading-relaxed whitespace-pre-line">
           {sphere.text}
@@ -30,7 +30,7 @@ function SphereSubsection({ sphere }: SphereSubsectionProps) {
   )
 
   const pngSide = (
-    <div className="relative w-1/2 bg-primary overflow-hidden">
+    <div className="relative w-1/2 bg-primary overflow-hidden hidden md:block">
       <div
         ref={pngParallaxRef}
         className="absolute inset-x-0 flex justify-center items-end"
@@ -49,7 +49,7 @@ function SphereSubsection({ sphere }: SphereSubsectionProps) {
     <section
       ref={animRef}
       data-animate
-      className="min-h-screen flex"
+      className="min-h-screen flex flex-col md:flex-row"
     >
       {sphere.imageRight ? (
         <>

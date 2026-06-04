@@ -27,17 +27,15 @@ function LogoMarquee() {
   )
 }
 
-const ITEMS_PER_PAGE = 3
-
-function ProductGallery() {
+function ProductGallery({ itemsPerPage }: { itemsPerPage: number }) {
   const photos = content.partners.gallery
-  const totalPages = Math.ceil(photos.length / ITEMS_PER_PAGE)
+  const totalPages = Math.ceil(photos.length / itemsPerPage)
   const [page, setPage] = useState(0)
   const [timerReset, setTimerReset] = useState(0)
   const pageRef = useRef(0)
 
   const pages = Array.from({ length: totalPages }, (_, pi) =>
-    photos.slice(pi * ITEMS_PER_PAGE, (pi + 1) * ITEMS_PER_PAGE)
+    photos.slice(pi * itemsPerPage, (pi + 1) * itemsPerPage)
   )
 
   useEffect(() => {
@@ -64,14 +62,21 @@ function ProductGallery() {
           style={{ transform: `translateX(-${page * 100}%)` }}
         >
           {pages.map((pagePhotos, pi) => (
-            <div key={pi} className="w-full shrink-0 grid grid-cols-3 gap-20">
+            <div
+              key={pi}
+              className={`w-full shrink-0 ${itemsPerPage > 1 ? 'grid grid-cols-3 gap-20' : ''}`}
+            >
               {pagePhotos.map((photo, i) => (
                 <div key={i} className="border-[7px] border-stroke rounded-[15px] overflow-hidden">
                   <img
                     src={photo.src}
                     alt="Продукция ЭПИРС"
                     className="block"
-                    style={{ width: photo.width, height: photo.height }}
+                    style={
+                      itemsPerPage === 1
+                        ? { width: '100%', height: 'auto' }
+                        : { width: photo.width, height: photo.height }
+                    }
                   />
                 </div>
               ))}
@@ -101,11 +106,18 @@ interface PartnersSectionProps {
 
 export default function PartnersSection({ id }: PartnersSectionProps) {
   return (
-    <section id={id} className="bg-primary px-14 py-16">
+    <section id={id} className="bg-primary px-4 md:px-14 py-16">
       <div className="w-full">
         <SectionHeading>Партнёры</SectionHeading>
         <LogoMarquee />
-        <ProductGallery />
+        {/* Mobile: 1 фото на страницу */}
+        <div className="md:hidden">
+          <ProductGallery itemsPerPage={1} />
+        </div>
+        {/* Desktop: 3 фото на страницу */}
+        <div className="hidden md:block">
+          <ProductGallery itemsPerPage={3} />
+        </div>
       </div>
     </section>
   )
