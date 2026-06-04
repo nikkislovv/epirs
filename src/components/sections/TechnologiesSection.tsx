@@ -1,15 +1,11 @@
 import { content } from '../../content'
-import { useParallax } from '../../lib/useParallax'
 import SectionHeading from '../ui/SectionHeading'
 import DarkBlock from '../ui/DarkBlock'
 
 function TechCard({ tech }: { tech: (typeof content.technologies)[number] }) {
-  const parallaxRef = useParallax<HTMLImageElement>(0.15)
-
   return (
     <div className="border-[7px] border-stroke rounded-[15px] p-4 flex flex-col items-center gap-4 bg-primary overflow-hidden">
       <img
-        ref={parallaxRef}
         src={tech.svg}
         alt={tech.title}
         className="w-full h-auto object-contain"

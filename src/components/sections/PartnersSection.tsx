@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { content } from '../../content'
 import SectionHeading from '../ui/SectionHeading'
 import DarkBlock from '../ui/DarkBlock'
@@ -33,34 +33,56 @@ function ProductGallery() {
   const photos = content.partners.gallery
   const totalPages = Math.ceil(photos.length / ITEMS_PER_PAGE)
   const [page, setPage] = useState(0)
+  const [timerReset, setTimerReset] = useState(0)
+  const pageRef = useRef(0)
+
+  const pages = Array.from({ length: totalPages }, (_, pi) =>
+    photos.slice(pi * ITEMS_PER_PAGE, (pi + 1) * ITEMS_PER_PAGE)
+  )
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setPage((prev) => (prev + 1) % totalPages)
-    }, 3000)
+      const next = (pageRef.current + 1) % totalPages
+      setPage(next)
+      pageRef.current = next
+    }, 7000)
     return () => clearInterval(timer)
-  }, [totalPages])
+  }, [totalPages, timerReset])
 
-  const visible = photos.slice(page * ITEMS_PER_PAGE, (page + 1) * ITEMS_PER_PAGE)
+  const handleDotClick = (i: number) => {
+    if (i === pageRef.current) return
+    setPage(i)
+    pageRef.current = i
+    setTimerReset((k) => k + 1)
+  }
 
   return (
     <DarkBlock>
-      <div className="grid grid-cols-3 gap-3 mb-6">
-        {visible.map((src, i) => (
-          <div key={i} className="border-[7px] border-stroke rounded-[15px] overflow-hidden">
-            <img
-              src={src}
-              alt={`Продукция ЭПИРС`}
-              className="w-full h-[36rem] object-contain"
-            />
-          </div>
-        ))}
+      <div className="overflow-hidden mb-6">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${page * 100}%)` }}
+        >
+          {pages.map((pagePhotos, pi) => (
+            <div key={pi} className="w-full shrink-0 grid grid-cols-3 gap-20">
+              {pagePhotos.map((src, i) => (
+                <div key={i} className="border-[7px] border-stroke rounded-[15px] overflow-hidden">
+                  <img
+                    src={src}
+                    alt="Продукция ЭПИРС"
+                    className="w-full h-[36rem] object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
       <div className="flex justify-center gap-2">
         {Array.from({ length: totalPages }).map((_, i) => (
           <button
             key={i}
-            onClick={() => setPage(i)}
+            onClick={() => handleDotClick(i)}
             className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 cursor-pointer ${
               i === page ? 'bg-accent' : 'bg-gray-300'
             }`}
