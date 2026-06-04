@@ -65,12 +65,13 @@ function ProductGallery() {
         >
           {pages.map((pagePhotos, pi) => (
             <div key={pi} className="w-full shrink-0 grid grid-cols-3 gap-20">
-              {pagePhotos.map((src, i) => (
+              {pagePhotos.map((photo, i) => (
                 <div key={i} className="border-[7px] border-stroke rounded-[15px] overflow-hidden">
                   <img
-                    src={src}
+                    src={photo.src}
                     alt="Продукция ЭПИРС"
-                    className="w-full h-[36rem] object-contain"
+                    className="block"
+                    style={{ width: photo.width, height: photo.height }}
                   />
                 </div>
               ))}

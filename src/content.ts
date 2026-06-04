@@ -32,7 +32,7 @@ export interface SiteContent {
   }>
   partners: {
     logos: string[]
-    gallery: string[]
+    gallery: Array<{ src: string; width: string; height: string }>
   }
   seminars: {
     title: string
@@ -143,18 +143,18 @@ export const content: SiteContent = {
       '/customer-docs/layouts/parthners_logo/Screenshot 2024-10-21 at 18.17.02.png',
     ],
     gallery: [
-      '/customer-docs/layouts/photos_of_products/1.png',
-      '/customer-docs/layouts/photos_of_products/2.png',
-      '/customer-docs/layouts/photos_of_products/3.png',
-      '/customer-docs/layouts/photos_of_products/4.png',
-      '/customer-docs/layouts/photos_of_products/5.png',
-      '/customer-docs/layouts/photos_of_products/6.png',
-      '/customer-docs/layouts/photos_of_products/7.png',
-      '/customer-docs/layouts/photos_of_products/8.png',
-      '/customer-docs/layouts/photos_of_products/9.png',
-      '/customer-docs/layouts/photos_of_products/10.png',
-      '/customer-docs/layouts/photos_of_products/11.png',
-      '/customer-docs/layouts/photos_of_products/12.png',
+      { src: '/customer-docs/layouts/photos_of_products/1.png',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/2.png',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/3.png',  width: '100%', height: '100%'},
+      { src: '/customer-docs/layouts/photos_of_products/4.png',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/6.png',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/7.png',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/5.png',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/8.png',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/9.png',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/10.png', width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/11.png', width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/12.png', width: '100%', height: '100%' },
     ],
   },
   seminars: {
