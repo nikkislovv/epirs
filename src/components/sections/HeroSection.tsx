@@ -16,7 +16,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
     <section id={id} className="min-h-screen bg-primary pt-16 md:pt-20 flex flex-col overflow-hidden">
       <div className="w-full px-4 md:px-14 pt-8 md:pt-14 pb-0 flex flex-col flex-1">
         {/* Текст: стопка на мобильном, сетка на десктопе */}
-        <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_2fr] md:gap-16 mb-8 md:mb-12 md:items-start">
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-[0.75fr_1.8fr] md:gap-4 mb-8 md:mb-12 md:items-start">
           <h1 className="font-['Montserrat'] font-semibold text-[18px] md:text-[26px] text-black leading-snug md:tracking-[0.07em]">
             {content.hero.title}
           </h1>
