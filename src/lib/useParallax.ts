@@ -1,6 +1,6 @@
 import { useRef, useEffect, RefObject } from 'react'
 
-export function useParallax<T extends HTMLElement>(speed = 0.3): RefObject<T> {
+export function useParallax<T extends HTMLElement>(speed = 0.3, mobileOffset = 0): RefObject<T> {
   const ref = useRef<T>(null)
 
   useEffect(() => {
@@ -8,20 +8,23 @@ export function useParallax<T extends HTMLElement>(speed = 0.3): RefObject<T> {
     if (!el) return
     let rafId: number
 
-    const onScroll = () => {
+    const update = () => {
       rafId = requestAnimationFrame(() => {
+        const isMobile = window.innerWidth < 768
+        const base = isMobile ? mobileOffset : 0
         const rect = el.getBoundingClientRect()
-        const offset = (window.innerHeight / 2 - rect.top - rect.height / 2) * speed
-        el.style.transform = `translateY(${offset}px)`
+        const parallax = (window.innerHeight / 2 - rect.top - rect.height / 2) * speed
+        el.style.transform = `translateY(${base + parallax}px)`
       })
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true })
+    update()
+    window.addEventListener('scroll', update, { passive: true })
     return () => {
-      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('scroll', update)
       cancelAnimationFrame(rafId)
     }
-  }, [speed])
+  }, [speed, mobileOffset])
 
   return ref
 }

@@ -6,7 +6,7 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ id }: HeroSectionProps) {
-  const busParallaxRef = useParallax<HTMLDivElement>(content.hero.busParallax)
+  const busParallaxRef = useParallax<HTMLDivElement>(content.hero.busParallax, 140)
 
   function scrollToContacts() {
     document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })
@@ -37,16 +37,15 @@ export default function HeroSection({ id }: HeroSectionProps) {
         </div>
 
         {/* Автобус — под текстом, по центру, крупный */}
-        <div className="relative min-h-[45vh] md:min-h-0 flex-1 overflow-hidden">
+        <div className="relative min-h-[45vh] md:min-h-0 flex-1 overflow-hidden -mx-4 md:mx-0">
           <div
             ref={busParallaxRef}
-            className="absolute inset-x-0 flex justify-center items-end"
-            style={{ bottom: content.hero.busBottom, height: content.hero.busHeight }}
+            className="relative md:absolute md:inset-x-0 flex justify-center items-end w-full md:h-[75vh] md:-bottom-[15vh]"
           >
             <img
               src={content.hero.busImage}
               alt="Автобус ЭПИРС"
-              className="h-full w-auto object-contain"
+              className="w-full h-auto origin-bottom scale-[1.5] md:scale-100 md:w-auto md:h-full object-contain"
             />
           </div>
         </div>

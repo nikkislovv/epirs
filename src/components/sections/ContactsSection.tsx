@@ -38,68 +38,67 @@ export default function ContactsSection({ id }: ContactsSectionProps) {
   }
 
   return (
-    <section id={id} className="bg-primary px-14 py-16">
-      <div className="w-full">
+    <section id={id} className="bg-primary px-4 pt-8 pb-16">
+      <div className="max-w-lg mx-auto">
         <SectionHeading>Контакты</SectionHeading>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <input
-              name="name"
-              type="text"
-              required
-              placeholder="Ваше имя"
-              value={form.name}
-              onChange={handleChange}
-              className="border border-black/20 rounded-lg px-4 py-3 text-sm font-['Inter'] bg-white focus:outline-none focus:border-accent transition-colors"
-            />
-            <input
-              name="contact"
-              type="text"
-              required
-              placeholder="Телефон или Email"
-              value={form.contact}
-              onChange={handleChange}
-              className="border border-black/20 rounded-lg px-4 py-3 text-sm font-['Inter'] bg-white focus:outline-none focus:border-accent transition-colors"
-            />
-            <textarea
-              name="message"
-              placeholder="Сообщение"
-              rows={5}
-              value={form.message}
-              onChange={handleChange}
-              className="border border-black/20 rounded-lg px-4 py-3 text-sm font-['Inter'] bg-white focus:outline-none focus:border-accent transition-colors resize-none"
-            />
-            <button
-              type="submit"
-              disabled={status === 'sending'}
-              className="bg-accent text-black font-['Inter'] font-bold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity cursor-pointer disabled:opacity-60 self-start"
-            >
-              {status === 'sending' ? 'Отправка…' : 'Отправить'}
-            </button>
-            {status === 'sent' && (
-              <p className="text-sm text-green-700 font-['Inter']">Спасибо! Мы свяжемся с вами.</p>
-            )}
-            {status === 'error' && (
-              <p className="text-sm text-red-600 font-['Inter']">Произошла ошибка. Попробуйте снова.</p>
-            )}
-          </form>
 
-          <div className="flex flex-col gap-4 text-sm font-['Inter']">
-            <a href={`tel:${content.contacts.phone}`} className="hover:text-heading transition-colors">
-              {content.contacts.phone}
-            </a>
-            <a href={`mailto:${content.contacts.email}`} className="hover:text-heading transition-colors">
-              {content.contacts.email}
-            </a>
-            <a
-              href={content.contacts.telegramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-heading transition-colors"
-            >
-              Telegram: {content.contacts.telegram}
-            </a>
-          </div>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <input
+            name="name"
+            type="text"
+            required
+            placeholder="Ваше имя"
+            value={form.name}
+            onChange={handleChange}
+            className="border border-black/20 rounded-lg px-4 py-3 text-sm font-['Inter'] bg-white focus:outline-none focus:border-accent transition-colors"
+          />
+          <input
+            name="contact"
+            type="text"
+            required
+            placeholder="Телефон или Email"
+            value={form.contact}
+            onChange={handleChange}
+            className="border border-black/20 rounded-lg px-4 py-3 text-sm font-['Inter'] bg-white focus:outline-none focus:border-accent transition-colors"
+          />
+          <textarea
+            name="message"
+            placeholder="Сообщение"
+            rows={5}
+            value={form.message}
+            onChange={handleChange}
+            className="border border-black/20 rounded-lg px-4 py-3 text-sm font-['Inter'] bg-white focus:outline-none focus:border-accent transition-colors resize-none"
+          />
+          <button
+            type="submit"
+            disabled={status === 'sending'}
+            className="bg-accent text-black font-['Inter'] font-bold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity cursor-pointer disabled:opacity-60 self-start"
+          >
+            {status === 'sending' ? 'Отправка…' : 'Отправить'}
+          </button>
+          {status === 'sent' && (
+            <p className="text-sm text-green-700 font-['Inter']">Спасибо! Мы свяжемся с вами.</p>
+          )}
+          {status === 'error' && (
+            <p className="text-sm text-red-600 font-['Inter']">Произошла ошибка. Попробуйте снова.</p>
+          )}
+        </form>
+
+        <div className="flex flex-col md:flex-row gap-4 mt-8 pt-8 border-t border-black/10 text-sm font-['Inter']">
+          <a href={`tel:${content.contacts.phone}`} className="hover:text-heading transition-colors">
+            {content.contacts.phone}
+          </a>
+          <a href={`mailto:${content.contacts.email}`} className="hover:text-heading transition-colors">
+            {content.contacts.email}
+          </a>
+          <a
+            href={content.contacts.telegramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-heading transition-colors"
+          >
+            Telegram: {content.contacts.telegram}
+          </a>
         </div>
       </div>
     </section>
