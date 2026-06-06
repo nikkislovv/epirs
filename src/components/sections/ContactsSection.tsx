@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { content } from '../../content'
 import SectionHeading from '../ui/SectionHeading'
 
@@ -11,6 +12,7 @@ interface ContactsSectionProps {
 export default function ContactsSection({ id }: ContactsSectionProps) {
   const [status, setStatus] = useState<Status>('idle')
   const [form, setForm] = useState({ name: '', contact: '', message: '' })
+  const [agreed, setAgreed] = useState(false)
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -69,9 +71,25 @@ export default function ContactsSection({ id }: ContactsSectionProps) {
             onChange={handleChange}
             className="border border-black/20 rounded-lg px-4 py-3 text-sm font-['Inter'] bg-white focus:outline-none focus:border-accent transition-colors resize-none"
           />
+          <label className="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              required
+              checked={agreed}
+              onChange={(e) => setAgreed(e.target.checked)}
+              className="mt-0.5 w-4 h-4 shrink-0 accent-accent cursor-pointer"
+            />
+            <span className="font-['Inter'] text-sm text-black/60 leading-snug">
+              Я согласен с{' '}
+              <Link to="/privacy" target="_blank" className="underline text-black/80 hover:text-black transition-colors">
+                политикой конфиденциальности
+              </Link>
+            </span>
+          </label>
+
           <button
             type="submit"
-            disabled={status === 'sending'}
+            disabled={status === 'sending' || !agreed}
             className="bg-accent text-black font-['Inter'] font-bold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity cursor-pointer disabled:opacity-60 self-start"
           >
             {status === 'sending' ? 'Отправка…' : 'Отправить'}
