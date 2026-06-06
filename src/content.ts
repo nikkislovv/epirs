@@ -27,7 +27,6 @@ export interface SiteContent {
     pngBottom: string
   }>
   technologies: Array<{
-    title: string
     svg: string
   }>
   partners: {
@@ -118,9 +117,9 @@ export const content: SiteContent = {
     },
   ],
   technologies: [
-    { title: 'Вакуумная инфузия', svg: '/customer-docs/layouts/technologies/tech_vacuum_infusion (1).svg' },
-    { title: 'Гибкое формование', svg: '/customer-docs/layouts/technologies/tech_flex_moulding (1).svg' },
-    { title: 'Лёгкий RTM',        svg: '/customer-docs/layouts/technologies/tech_light_rtm (1).svg' },
+    { svg: '/customer-docs/layouts/technologies/tech_vacuum_infusion (1).svg' },
+    { svg: '/customer-docs/layouts/technologies/tech_flex_moulding (1).svg' },
+    { svg: '/customer-docs/layouts/technologies/tech_light_rtm (1).svg' },
   ],
   partners: {
     logos: [

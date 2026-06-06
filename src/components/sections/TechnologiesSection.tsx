@@ -5,9 +5,8 @@ import DarkBlock from '../ui/DarkBlock'
 
 function TechCard({ tech }: { tech: (typeof content.technologies)[number] }) {
   return (
-    <div className="border-[7px] border-stroke rounded-[15px] p-4 flex flex-col items-center gap-4 bg-primary overflow-hidden">
-      <img src={tech.svg} alt={tech.title} className="w-full h-auto object-contain" />
-      <p className="font-['Inter'] font-bold text-[12px] text-black text-center">{tech.title}</p>
+    <div className="border-[7px] border-stroke rounded-[15px] p-4 flex flex-col items-center bg-primary overflow-hidden">
+      <img src={tech.svg} className="w-full h-auto object-contain" />
     </div>
   )
 }
@@ -33,13 +32,10 @@ export default function TechnologiesSection({ id }: TechnologiesSectionProps) {
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
           {content.technologies.map((tech) => (
-            <div key={tech.title} className="w-full shrink-0 px-4">
+            <div className="w-full shrink-0 px-4">
               <div className="border-[7px] border-stroke rounded-[15px] overflow-hidden">
-                <img src={tech.svg} alt={tech.title} className="w-full h-auto object-contain" />
+                <img src={tech.svg} className="w-full h-auto object-contain" />
               </div>
-              <p className="font-['Inter'] font-bold text-[15px] text-black text-center mt-3">
-                {tech.title}
-              </p>
             </div>
           ))}
         </div>
@@ -62,7 +58,7 @@ export default function TechnologiesSection({ id }: TechnologiesSectionProps) {
         <DarkBlock>
           <div className="grid grid-cols-3 gap-6">
             {content.technologies.map((tech) => (
-              <TechCard key={tech.title} tech={tech} />
+              <TechCard tech={tech} />
             ))}
           </div>
         </DarkBlock>
