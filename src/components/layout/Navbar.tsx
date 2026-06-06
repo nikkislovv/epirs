@@ -66,7 +66,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(true)}
             aria-label="Открыть меню"
           >
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor">
+            <svg width="30" height="30" viewBox="0 0 22 22" fill="currentColor" className="text-gray-400">
               <circle cx="5" cy="11" r="1.8" />
               <circle cx="11" cy="11" r="1.8" />
               <circle cx="17" cy="11" r="1.8" />
