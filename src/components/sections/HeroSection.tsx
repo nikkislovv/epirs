@@ -17,14 +17,14 @@ export default function HeroSection({ id }: HeroSectionProps) {
       <div className="w-full px-4 md:px-14 pt-8 md:pt-14 pb-0 flex flex-col flex-1">
         {/* Текст: стопка на мобильном, сетка на десктопе */}
         <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_2fr] md:gap-16 mb-8 md:mb-12 md:items-start">
-          <h1 className="font-['Montserrat'] font-semibold text-[18px] md:text-[20px] text-black leading-snug">
+          <h1 className="font-['Montserrat'] font-semibold text-[18px] md:text-[26px] text-black leading-snug md:tracking-[0.07em]">
             {content.hero.title}
           </h1>
           <div>
-            <p className="font-['Inter'] font-medium text-[15px] text-black mb-3">
+            <p className="font-['Inter'] font-bold text-[15px] md:text-[22px] text-black mb-3 md:tracking-[0.06em]">
               {content.hero.subtitle}
             </p>
-            <p className="font-['Inter'] font-normal text-[14px] text-black mb-8 leading-relaxed">
+            <p className="font-['Inter'] font-normal text-[14px] md:text-[17px] text-black mb-8 leading-relaxed md:tracking-[0.04em]">
               {content.hero.description}
             </p>
             <button
@@ -40,7 +40,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
         <div className="relative min-h-[45vh] md:min-h-0 flex-1 overflow-hidden -mx-4 md:mx-0">
           <div
             ref={busParallaxRef}
-            className="relative md:absolute md:inset-x-0 flex justify-center items-end w-full md:h-[75vh] md:-bottom-[15vh]"
+            className="relative md:absolute md:inset-x-0 flex justify-center items-end w-full md:h-[55vh] md:bottom-[-3vh]"
           >
             <img
               src={content.hero.busImage}
