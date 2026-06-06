@@ -38,8 +38,8 @@ export default function TechnologiesSection({ id }: TechnologiesSectionProps) {
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
-          {content.technologies.map((tech) => (
-            <div className="w-full shrink-0 px-4">
+          {content.technologies.map((tech, i) => (
+            <div key={i} className="w-full shrink-0 px-4">
               <div className="border-[7px] border-stroke rounded-[15px] overflow-hidden">
                 <img src={tech.svg} className="w-full h-auto object-contain" />
               </div>
@@ -64,8 +64,8 @@ export default function TechnologiesSection({ id }: TechnologiesSectionProps) {
       <div className="hidden md:block px-14">
         <DarkBlock>
           <div className="grid grid-cols-3 gap-6">
-            {content.technologies.map((tech) => (
-              <TechCard tech={tech} />
+            {content.technologies.map((tech, i) => (
+              <TechCard key={i} tech={tech} />
             ))}
           </div>
         </DarkBlock>

@@ -26,7 +26,11 @@ export default function Navbar() {
   }, [])
 
   function scrollTo(id: string) {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    const el = document.getElementById(id)
+    if (el) {
+      const navH = window.innerWidth >= 768 ? 80 : 64
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - navH, behavior: 'smooth' })
+    }
     setMenuOpen(false)
   }
 
