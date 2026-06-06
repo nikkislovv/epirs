@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { content } from '../../content'
 import SectionHeading from '../ui/SectionHeading'
 import DarkBlock from '../ui/DarkBlock'
+import { useSwipe } from '../../lib/useSwipe'
 
 const STADLER_SRC = '/customer-docs/layouts/parthners_logo/image (19).png'
 
@@ -54,9 +55,14 @@ function ProductGallery({ itemsPerPage }: { itemsPerPage: number }) {
     setTimerReset((k) => k + 1)
   }
 
+  const swipe = useSwipe({
+    onSwipeLeft: () => handleDotClick((pageRef.current + 1) % totalPages),
+    onSwipeRight: () => handleDotClick((pageRef.current - 1 + totalPages) % totalPages),
+  })
+
   return (
     <DarkBlock>
-      <div className="overflow-hidden mb-6">
+      <div className="overflow-hidden mb-6" {...swipe}>
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${page * 100}%)` }}

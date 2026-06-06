@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { content } from '../../content'
 import SectionHeading from '../ui/SectionHeading'
 import DarkBlock from '../ui/DarkBlock'
+import { useSwipe } from '../../lib/useSwipe'
 
 function TechCard({ tech }: { tech: (typeof content.technologies)[number] }) {
   return (
@@ -17,6 +18,12 @@ interface TechnologiesSectionProps {
 
 export default function TechnologiesSection({ id }: TechnologiesSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const total = content.technologies.length
+
+  const swipe = useSwipe({
+    onSwipeLeft: () => setActiveIndex((i) => (i + 1) % total),
+    onSwipeRight: () => setActiveIndex((i) => (i - 1 + total) % total),
+  })
 
   return (
     <section id={id} className="bg-primary py-16">
@@ -26,7 +33,7 @@ export default function TechnologiesSection({ id }: TechnologiesSectionProps) {
       </div>
 
       {/* Mobile: слайдер с плавным переходом */}
-      <div className="md:hidden overflow-hidden">
+      <div className="md:hidden overflow-hidden" {...swipe}>
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
