@@ -154,7 +154,7 @@ export const content: SiteContent = {
   },
   seminars: {
     title:    'Семинары',
-    videoIds: ['xb83uYlYsWA', 'QLXhxr4lbQQ', 'L3gAmJerK3c', '6km4EqtEPpY'],
+    videoIds: ['5NJ6ED3FwJA', '6km4EqtEPpY', 'OgQIucWnUCg', '4Kkfj9QRwrk'],
   },
   contacts: {
     phone:       '+375296736404',
