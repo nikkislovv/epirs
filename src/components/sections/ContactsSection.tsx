@@ -80,9 +80,9 @@ export default function ContactsSection({ id }: ContactsSectionProps) {
               className="mt-0.5 w-4 h-4 shrink-0 accent-accent cursor-pointer"
             />
             <span className="font-['Inter'] text-sm text-black/60 leading-snug">
-              Я согласен с{' '}
+              Я даю согласие на обработку персональных данных и принимаю{' '}
               <Link to="/privacy" target="_blank" className="underline text-black/80 hover:text-black transition-colors">
-                политикой конфиденциальности
+                политику конфиденциальности
               </Link>
             </span>
           </label>
