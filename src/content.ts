@@ -162,5 +162,5 @@ export const content: SiteContent = {
     telegram:    '@hlebsmychok',
     telegramUrl: 'https://t.me/hlebsmychok',
   },
-  web3formsKey: '',
+  web3formsKey: '7fae88a9-1f59-415e-8793-20ed423772b3',
 }

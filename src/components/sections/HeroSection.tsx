@@ -36,16 +36,18 @@ export default function HeroSection({ id }: HeroSectionProps) {
           </div>
         </div>
 
-        {/* Автобус — под текстом, по центру, крупный */}
-        <div className="relative min-h-[45vh] md:min-h-0 flex-1 overflow-hidden -mx-4 md:mx-0">
+        {/* Автобус — под текстом, по центру, крупный.
+            Размер привязан к ширине (vw), а не к остаточной высоте (vh),
+            чтобы композиция была одинаковой при любом масштабе и автобус не обрезался. */}
+        <div className="relative min-h-[45vh] md:min-h-0 flex-1 flex items-end justify-center overflow-hidden md:overflow-visible -mx-4 md:mx-0">
           <div
             ref={busParallaxRef}
-            className="relative md:absolute md:inset-x-0 flex justify-center items-end w-full md:h-[55vh] md:bottom-[-3vh]"
+            className="relative flex justify-center items-end w-full"
           >
             <img
               src={content.hero.busImage}
               alt="Автобус ЭПИРС"
-              className="w-full h-auto origin-bottom scale-[1.5] md:scale-100 md:w-auto md:h-full object-contain"
+              className="w-full h-auto origin-bottom scale-[1.5] md:scale-100 md:w-[60vw] md:max-w-[1200px] object-contain"
             />
           </div>
         </div>
