@@ -76,7 +76,7 @@ function ProductGallery({ itemsPerPage }: { itemsPerPage: number }) {
                 <div key={i} className="border-[7px] border-stroke rounded-[15px] overflow-hidden">
                   <img
                     src={photo.src}
-                    alt="Продукция ЭПИРС"
+                    alt="Изделие из стеклопластика производства ЭПИРС"
                     className="block"
                     style={
                       itemsPerPage === 1

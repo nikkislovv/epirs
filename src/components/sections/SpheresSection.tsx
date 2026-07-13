@@ -38,7 +38,7 @@ function SphereSubsection({ sphere }: SphereSubsectionProps) {
       >
         <img
           src={sphere.mainImage}
-          alt={sphere.title}
+          alt={sphere.imageAlt}
           className="h-full w-auto object-contain"
         />
       </div>

@@ -24,7 +24,8 @@
       "Bash(Remove-Item \"c:\\\\Work\\\\epirs\\\\src\\\\components\\\\sections\\\\ServicesSection.tsx\" -Force)",
       "Bash(Write-Output \"Deleted\")",
       "Bash(npx tsc *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(grep -nA10 '\"scripts\"' package.json)"
     ]
   }
 }
