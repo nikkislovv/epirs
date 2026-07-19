@@ -41,7 +41,11 @@ export default function Navbar() {
           <img
             src={content.logo}
             alt="ЭПИРС"
-            className="h-10 md:h-14 object-contain flex-shrink-0"
+            width={2100}
+            height={749}
+            fetchPriority="high"
+            decoding="async"
+            className="h-10 md:h-14 w-auto object-contain flex-shrink-0"
           />
 
           {/* Desktop: обычное меню */}

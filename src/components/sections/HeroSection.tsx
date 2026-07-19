@@ -47,6 +47,10 @@ export default function HeroSection({ id }: HeroSectionProps) {
             <img
               src={content.hero.busImage}
               alt="Автобус ЭПИРС"
+              width={1890}
+              height={832}
+              fetchPriority="high"
+              decoding="async"
               className="w-[140%] max-w-none h-auto md:w-[60vw] md:max-w-[1200px] object-contain"
             />
           </div>

@@ -27,6 +27,7 @@ export interface SiteContent {
   }>
   technologies: Array<{
     svg: string
+    alt: string
   }>
   partners: {
     logos: string[]
@@ -86,7 +87,7 @@ export const content: SiteContent = {
       text:       'ЭПИРС разрабатывает и производит изделия из стеклопластика для транспортной отрасли — от городского транспорта до крупногабаритной техники.\n\nТрамваи. Автобусы. Поезда. Автомобилестроение. Спецтехника.\n\nМы создаём внешние и внутренние композитные элементы любой сложности: кузовные детали, маски, панели, корпуса, интерьерные элементы, аэродинамические конструкции, технологические кожухи и нестандартные инженерные изделия.\n\nОт единичных прототипов до серийного производства. Высокая прочность, малый вес, устойчивость к нагрузкам, коррозии и агрессивной среде — стеклопластик открывает новые возможности для современного транспорта.',
       imageAlt:   'Стеклопластиковые изделия для транспорта — кузовные детали и панели ЭПИРС',
       mainImage:  '/customer-docs/layouts/Areas_Of_Activity/truck_no_background_no_logo.png',
-      bgImage:    '/customer-docs/layouts/Areas_Of_Activity/image (4).png',
+      bgImage:    '/customer-docs/layouts/Areas_Of_Activity/image (4).jpg',
       bgOpacity:  'opacity-[0.32]',
       imageRight: false,
       pngHeight:  '160vh',
@@ -98,7 +99,7 @@ export const content: SiteContent = {
       text:       'ЭПИРС разрабатывает стеклопластиковые изделия для энергетики и инфраструктуры, где важны защита, ресурс и стабильная работа в сложных условиях.\n\nКлючевое направление — корпуса для электрозаправочных станций: композитные оболочки и защитные конструкции, устойчивые к погоде, нагрузкам и городской эксплуатации.\n\nТакже создаём элементы для энергетических систем и технических модулей, требующих лёгких и антикоррозийных решений.\n\nОт зарядных станций до энергетических узлов — стеклопластик работает там, где стандартные материалы ограничены.',
       imageAlt:   'Стеклопластиковые корпуса для электрозаправочных станций и энергетики ЭПИРС',
       mainImage:  '/customer-docs/layouts/Areas_Of_Activity/wind_turbines_no_background.png',
-      bgImage:    '/customer-docs/layouts/Areas_Of_Activity/image (5).png',
+      bgImage:    '/customer-docs/layouts/Areas_Of_Activity/image (5).jpg',
       bgOpacity:  'opacity-[0.32]',
       imageRight: true,
       pngHeight:  '120vh',
@@ -110,7 +111,7 @@ export const content: SiteContent = {
       text:       'ЭПИРС создаёт стеклопластиковые решения для медицинского и wellness-сектора, где важны эргономика, точность и эстетика.\n\nКорпуса и элементы для массажных кресел, SPA-оборудования и установок индустрии отдыха. А также композитные оболочки для лазерных и высокотехнологичных медицинских систем, требующих стабильности формы и надёжности в эксплуатации.\n\nОт релаксационного оборудования до медицинских установок — стеклопластик объединяет комфорт и технологию.',
       imageAlt:   'Стеклопластиковый корпус массажного кресла и SPA-оборудования ЭПИРС',
       mainImage:  '/customer-docs/layouts/Areas_Of_Activity/massage_chair_no_background.png',
-      bgImage:    '/customer-docs/layouts/Areas_Of_Activity/image (6).png',
+      bgImage:    '/customer-docs/layouts/Areas_Of_Activity/image (6).jpg',
       bgOpacity:  'opacity-[0.27]',
       imageRight: false,
       pngHeight:  '140vh',
@@ -118,9 +119,18 @@ export const content: SiteContent = {
     },
   ],
   technologies: [
-    { svg: '/customer-docs/layouts/technologies/tech_vacuum_infusion (1).svg' },
-    { svg: '/customer-docs/layouts/technologies/tech_flex_moulding (1).svg' },
-    { svg: '/customer-docs/layouts/technologies/tech_light_rtm (1).svg' },
+    {
+      svg: '/customer-docs/layouts/technologies/tech_vacuum_infusion (1).svg',
+      alt: 'Технология вакуумной инфузии — схема процесса',
+    },
+    {
+      svg: '/customer-docs/layouts/technologies/tech_flex_moulding (1).svg',
+      alt: 'Технология Flex-формования — схема процесса',
+    },
+    {
+      svg: '/customer-docs/layouts/technologies/tech_light_rtm (1).svg',
+      alt: 'Технология RTM Light — схема процесса',
+    },
   ],
   partners: {
     logos: [
@@ -143,18 +153,18 @@ export const content: SiteContent = {
       '/customer-docs/layouts/parthners_logo/Screenshot 2024-10-21 at 18.17.02.png',
     ],
     gallery: [
-      { src: '/customer-docs/layouts/photos_of_products/1.png',  width: '100%', height: '100%' },
-      { src: '/customer-docs/layouts/photos_of_products/2.png',  width: '100%', height: '100%' },
-      { src: '/customer-docs/layouts/photos_of_products/3.png',  width: '100%', height: '100%'},
-      { src: '/customer-docs/layouts/photos_of_products/4.png',  width: '100%', height: '100%' },
-      { src: '/customer-docs/layouts/photos_of_products/6.png',  width: '100%', height: '100%' },
-      { src: '/customer-docs/layouts/photos_of_products/7.png',  width: '100%', height: '100%' },
-      { src: '/customer-docs/layouts/photos_of_products/5.png',  width: '100%', height: '100%' },
-      { src: '/customer-docs/layouts/photos_of_products/8.png',  width: '100%', height: '100%' },
-      { src: '/customer-docs/layouts/photos_of_products/9.png',  width: '100%', height: '100%' },
-      { src: '/customer-docs/layouts/photos_of_products/10.png', width: '100%', height: '100%' },
-      { src: '/customer-docs/layouts/photos_of_products/11.png', width: '100%', height: '100%' },
-      { src: '/customer-docs/layouts/photos_of_products/12.png', width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/1.jpg',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/2.jpg',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/3.jpg',  width: '100%', height: '100%'},
+      { src: '/customer-docs/layouts/photos_of_products/4.jpg',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/6.jpg',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/7.jpg',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/5.jpg',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/8.jpg',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/9.jpg',  width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/10.jpg', width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/11.jpg', width: '100%', height: '100%' },
+      { src: '/customer-docs/layouts/photos_of_products/12.jpg', width: '100%', height: '100%' },
     ],
   },
   seminars: {

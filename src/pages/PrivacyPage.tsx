@@ -53,7 +53,14 @@ export default function PrivacyPage() {
               </svg>
               Вернуться на сайт
             </Link>
-            <img src={content.logo} alt="ЭПИРС" className="h-8 object-contain" />
+            <img
+              src={content.logo}
+              alt="ЭПИРС"
+              width={2100}
+              height={749}
+              decoding="async"
+              className="h-8 w-auto object-contain"
+            />
           </div>
         </header>
 

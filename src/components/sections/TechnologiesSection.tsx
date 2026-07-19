@@ -7,7 +7,13 @@ import { useSwipe } from '../../lib/useSwipe'
 function TechCard({ tech }: { tech: (typeof content.technologies)[number] }) {
   return (
     <div className="border-[7px] border-stroke rounded-[15px] p-4 flex flex-col items-center bg-primary overflow-hidden">
-      <img src={tech.svg} className="w-full h-auto object-contain" />
+      <img
+        src={tech.svg}
+        alt={tech.alt}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-auto object-contain"
+      />
     </div>
   )
 }
@@ -41,7 +47,13 @@ export default function TechnologiesSection({ id }: TechnologiesSectionProps) {
           {content.technologies.map((tech, i) => (
             <div key={i} className="w-full shrink-0 px-4">
               <div className="border-[7px] border-stroke rounded-[15px] overflow-hidden">
-                <img src={tech.svg} className="w-full h-auto object-contain" />
+                <img
+                  src={tech.svg}
+                  alt={tech.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto object-contain"
+                />
               </div>
             </div>
           ))}

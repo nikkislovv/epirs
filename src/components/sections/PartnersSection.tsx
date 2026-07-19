@@ -18,7 +18,9 @@ function LogoMarquee() {
             key={i}
             src={src}
             alt="Партнёр ЭПИРС"
-            className={`object-contain grayscale hover:grayscale-0 transition duration-300 flex-shrink-0 ${
+            loading="lazy"
+            decoding="async"
+            className={`object-contain grayscale hover:grayscale-0 transition duration-300 flex-shrink-0 w-auto ${
               src === STADLER_SRC ? 'h-10' : 'h-16'
             }`}
           />
@@ -77,6 +79,8 @@ function ProductGallery({ itemsPerPage }: { itemsPerPage: number }) {
                   <img
                     src={photo.src}
                     alt="Изделие из стеклопластика производства ЭПИРС"
+                    loading="lazy"
+                    decoding="async"
                     className="block"
                     style={
                       itemsPerPage === 1

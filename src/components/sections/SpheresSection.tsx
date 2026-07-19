@@ -18,6 +18,8 @@ function SphereSubsection({ sphere }: SphereSubsectionProps) {
         ref={bgParallaxRef}
         src={sphere.bgImage}
         alt=""
+        loading="lazy"
+        decoding="async"
         className={`absolute inset-0 w-full h-full object-cover ${sphere.bgOpacity}`}
       />
       <div className="relative z-10 flex flex-col justify-center h-full px-4 py-12 md:px-14 md:py-20">
@@ -39,6 +41,8 @@ function SphereSubsection({ sphere }: SphereSubsectionProps) {
         <img
           src={sphere.mainImage}
           alt={sphere.imageAlt}
+          loading="lazy"
+          decoding="async"
           className="h-full w-auto object-contain"
         />
       </div>
