@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Реальные страницы SPA отдаём как index.html (React Router разрулит маршрут)
+[[redirects]]
+  from = "/privacy"
+  to = "/index.html"
+  status = 200
+
+# Всё остальное — 301-редирект на главную
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 301
